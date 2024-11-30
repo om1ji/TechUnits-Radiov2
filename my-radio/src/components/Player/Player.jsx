@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
+
+// Добавьте в начало файла определение Safari
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || 
+                /iPad|iPhone|iPod/i.test(navigator.userAgent);
+
 const Player = ({ stream }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(0.8);
@@ -83,15 +88,24 @@ const Player = ({ stream }) => {
         }
     };
 
-    const togglePlay = () => {
+    const togglePlay = async () => {
         if (!isOnline) return;
 
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play();
+        try {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                // Для Safari: пересоздаём аудио элемент перед воспроизведением
+                if (isSafari) {
+                    audioRef.current.src = streamUrl;
+                    audioRef.current.load();
+                }
+                await audioRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        } catch (error) {
+            console.error('Ошибка воспроизведения:', error);
         }
-        setIsPlaying(!isPlaying);
     };
 
     return (
@@ -131,6 +145,8 @@ const Player = ({ stream }) => {
                     ref={audioRef}
                     src={streamUrl}
                     preload="none"
+                    playsInline
+                    webkit-playsinline="true"
                 />
             </div>
         </div>
