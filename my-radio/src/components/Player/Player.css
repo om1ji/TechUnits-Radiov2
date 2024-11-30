@@ -1,0 +1,67 @@
+.player-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.player-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+}
+
+
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+
+
+.track-info {
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+.volume-icon {
+    font-size: 1.4rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .stream-title {
+        font-size: 2rem;
+        margin-top: 60px;
+    }
+
+    .volume-control {
+        width: 250px;
+    }
+
+    .play-button {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+    .player-controls {
+        margin-bottom: 80px;
+    }
+}
+

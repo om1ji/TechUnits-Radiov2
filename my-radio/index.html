@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Основные SEO метатеги -->
+    <title>TechUnits Radio</title>
+    <meta name="description" content="Аудиопотоки участников TechUnits. Источник tech волн и авторского звука." />
+    <meta name="keywords" content="онлайн радио, интернет радио, радиостанции онлайн, музыка онлайн" />
+    <meta name="author" content="TechUnits Radio" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://techunits.space" />
+    
+    <!-- Open Graph теги для соцсетей -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TechUnits Radio" />
+    <meta property="og:description" content="Аудиопотоки участников TechUnits. Источник tech волн и авторского звука." />
+    <meta property="og:image" content="https://techunits.space/icon.png" />
+    <meta property="og:url" content="https://techunits.space" />
+    <meta property="og:site_name" content="TechUnits Radio" />
+    
+    <!-- Twitter Card теги -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TechUnits Radio" />
+    <meta name="twitter:description" content="Аудиопотоки участников TechUnits. Источник tech волн и авторского звука." />
+    <meta name="twitter:image" content="https://techunits.space/icon.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RadioStation",
+        "name": "TechUnits Radio",
+        "url": "https://techunits.space",
+        "logo": "https://techunits.space/logo.png",
+        "description": "Аудиопотоки участников TechUnits. Источник tech волн и авторского звука.",
+        "potentialAction": {
+            "@type": "ListenAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://techunits.space/{station}"
+            }
+        },
+    }
+    </script>
+
+    <!-- Дополнительные мета-теги -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Предзагрузка важных ресурсов -->
+    <link rel="preconnect" href="https://techunits.space" />
+    <link rel="dns-prefetch" href="https://techunits.space" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
