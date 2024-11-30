@@ -56,9 +56,9 @@ const StreamItem = ({ stream, onSelect }) => {
 StreamItem.propTypes = {
     stream: PropTypes.shape({
         name: PropTypes.string.isRequired,
-        logo: PropTypes.string.isRequired,
+        logo: PropTypes.string,
         statsUrl: PropTypes.string.isRequired,
-        backgroundImage: PropTypes.string.isRequired
+        backgroundImage: PropTypes.string
     }).isRequired,
     onSelect: PropTypes.func.isRequired
 };
